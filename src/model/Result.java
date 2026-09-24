@@ -10,6 +10,7 @@ public class Result {
     private int totalMarks;
     private Timestamp submittedAt;
 
+   
     // Extra fields for display purposes
     private String studentName;
     private String examTitle;
@@ -17,9 +18,13 @@ public class Result {
     public Result() {
     }
 
-    public Result(int id, int studentId, int examId, int score, int totalMarks, Timestamp submittedAt) {
+    public Result(int id, int studentId, int examId, int score, int totalMarks, Timestamp submittedAt) 
+    
+    {
         this.id = id;
+        
         this.studentId = studentId;
+        
         this.examId = examId;
         this.score = score;
         this.totalMarks = totalMarks;
@@ -59,6 +64,7 @@ public class Result {
 
     public int getScore() {
         return score;
+        
     }
 
     public void setScore(int score) {
