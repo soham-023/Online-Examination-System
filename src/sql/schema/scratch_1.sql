@@ -23,6 +23,7 @@ CREATE TABLE users (
 );
 
 -- Exams table
+
 CREATE TABLE exams (
     id SERIAL PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
@@ -32,6 +33,7 @@ CREATE TABLE exams (
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 -- Questions table
 CREATE TABLE questions (
@@ -44,6 +46,7 @@ CREATE TABLE questions (
     option_d VARCHAR(500) NOT NULL,
     correct_option CHAR(1) NOT NULL CHECK (correct_option IN ('A', 'B', 'C', 'D')),
     marks INTEGER NOT NULL DEFAULT 1
+    
 );
 
 -- Results table
@@ -55,6 +58,7 @@ CREATE TABLE results (
     total_marks INTEGER NOT NULL DEFAULT 0,
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(student_id, exam_id)
+    
 );
 
 -- Insert default teacher account
