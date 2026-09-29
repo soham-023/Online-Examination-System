@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExamDAO {
+    
 
     public boolean createExam(Exam exam) {
         String sql = "INSERT INTO exams (title, description, duration_minutes, created_by, is_active) VALUES (?, ?, ?, ?, ?)";
@@ -24,6 +25,7 @@ public class ExamDAO {
                 if (generatedKeys.next()) {
                     exam.setId(generatedKeys.getInt(1));
                 }
+                
                 return true;
             }
         } catch (SQLException e) {
@@ -31,6 +33,7 @@ public class ExamDAO {
         }
         return false;
     }
+    
 
     public boolean updateExam(Exam exam) {
         String sql = "UPDATE exams SET title = ?, description = ?, duration_minutes = ?, is_active = ? WHERE id = ?";
@@ -45,8 +48,10 @@ public class ExamDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
         return false;
     }
+    
 
     public boolean deleteExam(int id) {
         String sql = "DELETE FROM exams WHERE id = ?";
