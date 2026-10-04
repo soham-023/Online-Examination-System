@@ -6,6 +6,7 @@ public class User {
     private String password;
     private String fullName;
     private String role; // TEACHER or STUDENT
+    
 
     public User() {
     }
@@ -70,6 +71,7 @@ public class User {
     }
 
     public boolean isStudent() {
+        
         return "STUDENT".equals(role);
     }
 
