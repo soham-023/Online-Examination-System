@@ -11,6 +11,7 @@ public class ResultDAO {
 
     public boolean saveResult(Result result) {
         String sql = "INSERT INTO results (student_id, exam_id, score, total_marks) VALUES (?, ?, ?, ?)";
+        
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, result.getStudentId());
@@ -23,6 +24,7 @@ public class ResultDAO {
         }
         return false;
     }
+    
 
     public List<Result> getResultsByStudent(int studentId) {
         List<Result> results = new ArrayList<>();
@@ -45,6 +47,7 @@ public class ResultDAO {
     }
 
     public List<Result> getResultsByExam(int examId) {
+        
         List<Result> results = new ArrayList<>();
         String sql = "SELECT r.*, u.full_name as student_name, e.title as exam_title " +
                 "FROM results r " +
